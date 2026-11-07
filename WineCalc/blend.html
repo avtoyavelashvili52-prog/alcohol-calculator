@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>კუპაჟი</title>
+    <script>try { var th = localStorage.getItem('theme'); if (th) document.documentElement.dataset.theme = th; } catch (e) {}</script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="card">
+        <header class="bar">
+            <h1 data-b="title"></h1>
+            <div class="tools">
+                <select id="lang" aria-label="Language">
+                    <option value="ka">KA</option>
+                    <option value="ru">RU</option>
+                    <option value="en">EN</option>
+                </select>
+                <button id="theme" class="icon" type="button"></button>
+            </div>
+        </header>
+
+        <section class="group">
+            <h2 data-b="partA"></h2>
+            <div class="row2">
+                <div><label for="v1" data-b="volume"></label><input type="text" inputmode="decimal" id="v1" autocomplete="off" placeholder="100"></div>
+                <div><label for="q1" data-b="strength"></label><input type="text" inputmode="decimal" id="q1" autocomplete="off" placeholder="70"></div>
+            </div>
+        </section>
+
+        <section class="group">
+            <h2 data-b="partB"></h2>
+            <div class="row2">
+                <div><label for="v2" data-b="volume"></label><input type="text" inputmode="decimal" id="v2" autocomplete="off" placeholder="200"></div>
+                <div><label for="q2" data-b="strength"></label><input type="text" inputmode="decimal" id="q2" autocomplete="off" placeholder="30"></div>
+            </div>
+        </section>
+
+        <button class="go" type="button" onclick="calculateBlend()" data-b="calc"></button>
+
+        <div id="result-box" class="result-idle">
+            <span id="result-text" data-b="waiting"></span>
+        </div>
+
+        <p class="note" data-b="note"></p>
+        <a class="navlink" href="index.html" data-b="back"></a>
+    </main>
+
+    <script src="common.js"></script>
+    <script src="alcohol-core.js"></script>
+    <script src="blend-core.js"></script>
+    <script src="site.js"></script>
+    <script src="blend-ui.js"></script>
+</body>
+</html>
